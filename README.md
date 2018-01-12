@@ -3,6 +3,7 @@ Web Development and Design
 
 # fonts and images and icons
 http://fontawesome.io/examples/ 
+https://www.flaticon.com/
 
 # website for themes
 https://themeforest.net/ 
