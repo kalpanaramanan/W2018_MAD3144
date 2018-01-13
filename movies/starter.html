@@ -49,7 +49,26 @@
     /*---------------------------------
 		CSS for menu header 
 	----------------------------------*/
-   
+		
+		.logo {
+			float:left;
+		}
+		
+		.menu {
+			float:right;
+			padding-top:15px;
+			font-size:15px;
+		}
+		
+		.menu a {
+			text-decoration:none;
+			color:#424242;
+			margin-left:20px;
+		}
+		
+		.menu a:hover{
+			color:#2EC486;
+		}
 
     /*---------------------------------
 		Banner section css 
@@ -75,12 +94,14 @@
   <body>
 
     <header id="top" class="clearfix">
-		<div class="">
-			<h2>MOVIESTRAILER.COM</h2>
-			<a href="" class="">Movies</a>
-			<a href="" class="">TV Shows</a>
-			<a href="" class="">Buy Tickets</a>
-			<a href="" class="">About Us</a>
+		<div class="wrapper">
+			<h2 class="logo">MOVIESTRAILER.COM</h2>
+			<div class="menu">
+				<a href="" class="">Movies</a>
+				<a href="" class="">TV Shows</a>
+				<a href="" class="">Buy Tickets</a>
+				<a href="" class="">About Us</a>
+			</div>
 		</div>
 	</header> <!--// header -->
 
