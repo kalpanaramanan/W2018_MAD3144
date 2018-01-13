@@ -73,8 +73,54 @@
     /*---------------------------------
 		Banner section css 
 	----------------------------------*/
-   
-   
+	   .banner-wrapper{
+			width:900px;
+			max-width: 90%;
+			margin: 0 auto;
+			display:flex;
+			justify-content:centre
+			align-item:centre;
+			<!--border:1px solid green;	-->
+			
+	   }
+	   
+	   .poster{
+			width:275px;
+			float:left;
+	   }
+	   
+	   .feactured-movie{
+			float:left;
+			color:#fff;
+			margin-left :10px;
+	   }
+	   
+	   #banner{
+			background-color:#212121;
+			padding-top:50px;
+			padding-bottom:50px;
+	   }
+	   
+	   <!--.feactured-movie p{
+			color:#ccc;
+			line-height:30px;
+	   }-->
+	   
+	   #feactured-movie-title{
+			color:white;		
+	   }
+	   
+	   #feactured-movie-description{
+			color:#ccc;
+			line-height:30px;	
+	   }
+	   
+	   #feactured-movie-info{
+		color:white;
+		font-size:8px;
+		font-weigth:bold;
+	   }
+	   
     /*---------------------------------
 		CSS for menu header 
 	----------------------------------*/
@@ -106,19 +152,24 @@
 	</header> <!--// header -->
 
     <section id="banner" class="clearfix">
-		<div class="">
-			<img src="images/avengers.jpg">
-			<h2>Avengers: Infinity War(2018)</h2>
-			<p>
-				<i class="fa fa-star" style="color:green;" aria-hidden="true"></i>
-				<i class="fa fa-star" style="color:green;" aria-hidden="true"></i>
-				<i class="fa fa-star" style="color:green;" aria-hidden="true"></i>
-				<i class="fa fa-star" style="color:green;" aria-hidden="true"></i>
-				<i class="fa fa-star-o" aria-hidden="true"></i>
-			</p>
-			<p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
-			<p>PG-13| 120 min| Actor,Adventure,Fantasy | May 4,2018</p>
-		</div>
+		<div class="banner-wrapper"><!-- //banner-wrapper opening div -->
+			<div class="poster">
+				<img src="images/avengers.jpg" style="width:175px;">
+			</div> <!-- //poster closing div -->
+			<div class="feactured-movie">
+				<h2 class="feactured-movie-title">Avengers: Infinity War(2018)</h2>
+				<!-- font awesome here for stars -->
+				<div class="">
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+				</div>
+				<p class="feactured-movie-description">The Avengers and their allies must be willing to sacrifice all in an <br> attempt to defeat the   powerful Thanos before his blitz <br>of devastation and ruin puts an end to the universe.</p>
+				<p class="feactured-movie-info">PG-13| 120 min| Actor,Adventure,Fantasy | May 4,2018</p>
+			</div> <!-- // feactured-movie-description closing div -->
+		</div><!-- //banner-wrapper closing div -->
     </section> <!--// banner -->
 
     <section id="movies-coming-soon" class="clearfix">
