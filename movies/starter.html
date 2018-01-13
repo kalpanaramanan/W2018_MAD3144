@@ -129,11 +129,75 @@
     /*---------------------------------
 		Newsletter css 
 	----------------------------------*/
+	#newsletter{
+		background-color:#212121;
+		padding-bottom:60px;
+		padding-top:60px;
+		text-align:center;
+	}
+	
+	.newsletter-wrapper{
+		width:600px;
+		margin:0 auto;
+	}
+	
+   .newsletter-description{
+		color:white;
+		font-size:28px;
+   }
    
+   .inputbox{
+		background-color:#404043;
+		border:none;
+		width:35%;
+		margin 0 0.5%;
+		height:50px;
+		outline:none;
+		border-radius:3.8px;
+		color:white;
+		padding: 7px 19px;
+		font-size:12px;
+   }
+   
+   #newsletter button{
+		border-radius:28px;
+		background-color:
+		border: none;
+		outline:none;
+		padding: 15px 15px;
+		color:white;
+		font-weght:700;
+		font-size:14px;
+		background:#00FFFF;
+		font-weight:bold;
+		width:150px;
+		margin-top:10px;	
+   }
    
     /*---------------------------------
 		Footer css
 	/*----------------------------------*/
+	
+	footer{
+		background-color:#8F2D56;
+		padding-top:1px;
+		padding-bottom:10px;
+		text-align:center;
+	}
+   
+   .footer-link{
+		color:#ccc;
+		text-decoration:none;
+		margin-left:10px;
+		font-size:10px;
+   }
+   
+   .footer-copyright{
+		color:white;
+		font-size:10px;
+		font-weight:bold;
+   }
+   
    
     </style>
   </head>
@@ -210,19 +274,20 @@
     </section> <!--// movies-coming-soon -->
 
     <section id="newsletter">
-		<div class="">
-			<h3>Get all the latest movie news and trailers delievered to your inbox. Free!</h3>
+		<div class="newsletter-wrapper">
+			<h3 class="newsletter-description">Get all the latest movie news and trailers delievered to your inbox. Free!</h3>
 			<form>
-				<input type="text" name="name" placeholder="Name">
-				<input type="text" name="Email Address" placeholder="Email Address">
+				<input type="text" name="name" placeholder="Name" class="inputbox">
+				<input type="text" name="Email Address" placeholder="Email Address" class="inputbox">
 				<button type="button">Submit</button>
 			</form>
 		</div>
     </section> <!--//newsletter-->
 
     <footer>
-		<p><a href="">Terms and Conditions </a>&nbsp;&nbsp;&nbsp;<a href=""> Privacy policy</a></p>
-		<p><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 MovieTrailers.com</p>
+		<p><a href="" class="footer-link">Terms and Conditions</a>
+		<a href="" class="footer-link">Privacy policy</a></p>
+		<p class="footer-copyright"><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 MovieTrailers.com</p>
     </footer> <!--//footer -->
 
   </body>
