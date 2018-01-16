@@ -1,0 +1,76 @@
+715368@228-IMAC05 ~ (master)
+$ cd Downloads/
+
+715368@228-IMAC05 ~/Downloads (master)
+$ ls
+desktop.ini
+
+715368@228-IMAC05 ~/Downloads (master)
+$ ls
+New Microsoft Word Document.docx  desktop.ini
+
+715368@228-IMAC05 ~/Downloads (master)
+$ git clone https://github.com/kalpanaramanan/test.git
+Cloning into 'test'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done
+
+715368@228-IMAC05 ~/Downloads (master)
+$ cd test
+
+715368@228-IMAC05 ~/Downloads/test (master)
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       readme.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+715368@228-IMAC05 ~/Downloads/test (master)
+$ git add -A
+
+715368@228-IMAC05 ~/Downloads/test (master)
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#       new file:   readme.txt
+#
+
+715368@228-IMAC05 ~/Downloads/test (master)
+$ git commit -m "test file added"
+[master (root-commit) 9b54561] test file added
+ Committer: unknown <715368@228-iMac05.student.Tor.Loc>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 readme.txt
+
+715368@228-IMAC05 ~/Downloads/test (master)
+$ git push origin master
+Username for 'https://github.com': kalpanaaramanan@gmail.com
+Password for 'https://kalpanaaramanan@gmail.com@github.com':
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 225 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/kalpanaramanan/test.git
+ * [new branch]      master -> master
+
+715368@228-IMAC05 ~/Downloads/test (master)
