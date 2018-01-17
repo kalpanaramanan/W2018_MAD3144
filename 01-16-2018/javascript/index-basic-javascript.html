@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JavaScript</title>
+  </head>
+  <body>
+
+	<script>
+		
+		// print data in console
+		console.log("hello world!"); 
+		
+		// decalring a variable
+		var no = "C0715368";  
+		var studName = "Kalpana Ramanan";
+		var marks = 10.5;
+		var age = 26;
+		var flag = true;
+		
+		console.log(no + " - "+ studName + " - "+ marks + " - "+ age + " - "+ flag);
+	
+		// decalring a array
+		var arrayVar = [1,2,3,4,5,6];
+		var arrayEle_1 = arrayVar[3]; // Get an element from array
+		console.log(" Position of Array Element 3 :"+arrayEle_1);
+		
+		arrayVar[3] = 10; // change the value of an array
+		arrayEle_1 = arrayVar[3];
+		console.log(" Position of Array Element 3 :"+arrayEle_1);
+
+		arrayVar.push(24); // add an element
+		arrayEle_1 = arrayVar[6];
+		console.log(" Position of Array Element 6 :"+arrayEle_1);
+		
+		arrayVar.pop(); // delete an element in an array
+		console.log(" Position of Array Element 6 :"+arrayVar[6]);
+		
+		//Dictionaries - Key, Value pair
+		var d = {			// Decelare a dictornary
+			"no" : "C0715368",
+			"studName" : "Kalpana Ramanan",
+			"marks" : 10.5
+		}
+		console.log(" Dictornary value :"+d.no);
+		
+		console.log(" Dictornary value addition :"+ (d.marks + 1.0));
+		
+		var price = 25
+		if(price < 10){
+			price = price - 2;
+			console.log(" Price:"+ price);
+		}else{
+			console.log(" Price:"+ price);
+		}
+		
+	</script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Card Deal Game</title>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Coda'>
+	<style type="text/css">
+    body {
+      font-family:Coda, san-serif;
+    }
+    .green {
+      margin-left: 10px;
+      color:#00E676;
+    }
+	</style>
+</head>
+
+<body>
+	<h1>JQuery Examples</h1>
+
+  <h2> Fade Effects <h2>
+
+  <img src="images/watermelon.png" id="melon">
+  <img src="images/carrot.png" id="carrot" style="display:none;">
+
+  <h2> Sliding </h2>
+
+  <ul id="fruit-list" style="display:none;">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Carrot</li>
+  </ul>
+
+  <h2> Clicking </h2>
+
+  <button id="click-example"> Click Me </button>
+
+  <h2> Combining Clicking and Sliding </h2>
+
+  <p id="show-options"> Options <i class="fa fa-arrow-circle-down" style="margin-left:20px;"></i>  </p>
+  <ul id="option-list" style="display:none;">
+    <li>Set Away Status</li>
+    <li>Change Preferences</li>
+    <li>Logout</li>
+  </ul>
+
+  <h2> Appending HTML </h2>
+
+  <button id="done"> Mark as Done </button>
+  <ul id="homework-list">
+    <li> Project 1 </li>
+    <li> Assignment 4 </li>
+  </ul>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+    // show and hide using the Fade function
+    $("#melon").fadeOut(3000);
+    $("#carrot").fadeIn(5000);
+
+    // sliding effects
+    $("#fruit-list").slideDown(3000);
+    $("#fruit-list").slideUp(3000);
+
+    // click example
+    $("#click-example").click(function(){
+      alert("HELLO WORLD!");
+    });
+
+    // Combining clicking and sliding
+    $("#show-options").click(function() {
+      $("#option-list").slideDown();
+    });
+
+    $("#done").click(function(){
+      // append done to end of list
+      $("#homework-list li").append("<i class='fa fa-check green'></i>DONE!");
+    });
+	</script>
+</body>
+
+</html>

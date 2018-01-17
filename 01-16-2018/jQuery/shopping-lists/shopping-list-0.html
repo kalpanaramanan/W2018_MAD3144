@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	
+    <title>Card Deal Game</title>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Coda'>
+	
+	<style type="text/css">
+	
+	.addToList{
+		border-radius:28px;
+		border: none;
+		outline:none;
+		padding: 15px 15px;
+		color:white;
+		font-weght:700;
+		font-size:14px;
+		background:#17a2b8;
+		font-weight:bold;
+		width:150px;
+		margin-top:10px;
+	}
+	</style>
+  </head>
+  <body>
+
+    <p> This code demonstrates how to use JQuery to add things to a <code> ul </code> list. </p>
+
+    <h1> Shopping List </h1>
+
+    <input type="text" id="textData" />
+    <button class="addToList">Add</button>
+
+    <ul id="list">
+    </ul>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+	
+		$(".addToList").click(function(){
+			var data = $("#textData").val();
+			var liTagData = "<li id='li"+data+"'>"+ data + "<a class='delete-btn-"+data+"'><i class='fa fa-trash'></i></a></li>";
+			$("#list").append( liTagData  );
+		});
+		
+		$(".delete-btn-"+data).click(function(){
+			alert("Hello ");
+			var d = "li"+data;
+			$("#li"+data).remove("<li>"+ $("#textData").val() +"</li>" + "<i class='fa fa-trash-o' aria-hidden='true'></i>");
+		});
+    </script>
+  </body>
+</html>
