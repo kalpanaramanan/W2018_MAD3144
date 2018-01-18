@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JSON Class</title>
+   
+  </head>
+  <body>
+    <script>
+		// create a JSON object (dictionary)
+		var myObj = { "name":"Kalpana", "age":28, "city":"Toronto" };
+
+		// output each key to the screen
+		console.log(myObj["age"]);
+		console.log(myObj.city);
+		console.log(myObj.name);
+
+		// do something with your keys
+		console.log(myObj.name + " " + myObj.city);
+
+		// change a (key,value) pair
+		myObj.name = "Sai Praveen";
+		console.log(myObj.name);
+
+		var x = myObj.age = 200 * 3 - 4;
+		myObj.age = x;
+		console.log(myObj.age);
+
+		// delete a (key, value) pair
+		delete myObj.name;
+		console.log(myObj);
+
+		// add a simple (key,value) pair
+		myObj.job = "Software Developer"
+		console.log(myObj);
+
+		// add a complicated (key, value) pair
+		myObj.cars = ["honda cr-v", "mazda", "bmw 230i"]
+		console.log(myObj);
+
+		myObj.family = {
+		  "mother":"Michelle",
+		  "son":"Peter"
+		}
+
+		console.log(myObj);
+
+		// show the mother
+		console.log(myObj.cars[1]);
+		console.log(myObj.family.mother);
+
+		myObj.cars.push("bicycle");
+		myObj.family.pets = ["cat", "dog"];
+
+		console.log(myObj);
+	</script>
+  </body>
+</html>
