@@ -6,7 +6,7 @@
 	</head>
 	<body>
 
-	<h1> Student Names </h1>
+	<h1> Student Deatils </h1>
 
 	<p></p>
 
@@ -23,12 +23,14 @@
 	  
 	 var studentArray = localStorage.getItem("student");
 
-	 //var  y = JSON.parse(studentArray);
-	 console.log(studentArray.length);
-	  for (i=0;i<studentArray.length;i++){
-	  var dic  = studentArray[i];
-		 $("p").append(dic.name);
-		 console.log(studentArray[i]);
+	 var  y = JSON.parse(studentArray);
+	
+	  console.log(y[0].name);
+	  
+	  for (i=0;i<y.length;i++){
+	  var dic  = y[i];
+		 $("p").append("Name : " + dic.name +"<br>" + "Student ID: " + dic.id +"<br>" + "Program: " + dic.program +"<br>" + "GPA: " + dic.gpa +"<br><br>");
+		 console.log(y[i]);
 	  }
 	  
 	  

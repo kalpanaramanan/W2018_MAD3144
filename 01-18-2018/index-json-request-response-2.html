@@ -9,7 +9,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
   var request = new XMLHttpRequest();
-  var url = "https://dog.ceo/api/breeds/image/random";
+ var url = "https://dog.ceo/api/breeds/image/random";
+  //var url = "https://api.fixer.io/latest";
 
   request.onreadystatechange = processRequest;
   function processRequest() {
@@ -25,6 +26,7 @@
 
         // put the image into the <img> tag
         $("#photo").attr("src", picture);
+		  //console.log(dogs.base);
     }
   }
 

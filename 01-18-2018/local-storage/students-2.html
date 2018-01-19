@@ -46,6 +46,7 @@
 	
 			//var person2 = JSON.stringify(studentDict);
 			studentArray.push(studentDict);
+			var person2 = JSON.stringify(studentArray);
 			/*for (i=0;i<studentArray.length;i++){
 				$("p").append(studentArray[i].name );
 			}*/
@@ -55,7 +56,7 @@
 			localStorage.setItem("program", program);
 			localStorage.setItem("gpa", gpa); */
 			console.log(studentArray);
-			localStorage.setItem("student",studentArray);
+			localStorage.setItem("student",person2);
 			alert("Saved!");
 		});
 	</script>
