@@ -1,0 +1,36 @@
+<html>
+<body>
+
+<h1> Here is a photo of a dog! </h1>
+<p> Refresh to see a new photo </p>
+
+<img id="photo">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  var request = new XMLHttpRequest();
+  var url = "https://dog.ceo/api/breeds/image/random";
+
+  request.onreadystatechange = processRequest;
+  function processRequest() {
+    if (request.readyState == 4 && request.status == 200) {
+        // show the JSON response in the console
+        // console.log(request.responseText);
+
+        // parse the JSON so we can use it
+        var dogs = JSON.parse(request.responseText);
+
+        // print something from the response
+        var picture = dogs.message;
+
+        // put the image into the <img> tag
+        $("#photo").attr("src", picture);
+    }
+  }
+
+  request.open("GET", url, true);
+  request.send();
+
+</script>
+</body>
+</html>

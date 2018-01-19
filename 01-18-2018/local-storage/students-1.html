@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width" name="viewport">
+	<title></title>
+</head>
+<body>
+	<h1>Student Database</h1>
+	
+	<label>What's the student name?</label>
+	<input id="yourName" type="text">	<br>
+
+	<label>What's the id?</label>
+	<input id="yourID" type="text">		<br>
+	
+	<button id="go">Save</button> 
+	<a href="next-1.html">Show Students</a> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script> 
+
+	<script type="text/javascript">
+
+		$("#go").click(function(){
+			var x = $("input#yourName").val();
+			var y = $("input#yourID").val();
+			localStorage.setItem("studentName", x);
+			localStorage.setItem("id", y);
+			
+			alert("Saved!");
+		});
+	</script> 
+</body>
+</html>

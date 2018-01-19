@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+
+	<h1> Student Names </h1>
+
+	<p></p>
+
+	<a href="students-2.html"> Go Back </a>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	  
+	  /*var s = localStorage.getItem("studentName");
+	  var i = localStorage.getItem("id");
+	  var p = localStorage.getItem("program");
+	  var g = localStorage.getItem("gpa");*/
+	  
+	  
+	 var studentArray = localStorage.getItem("student");
+
+	 //var  y = JSON.parse(studentArray);
+	 console.log(studentArray.length);
+	  for (i=0;i<studentArray.length;i++){
+	  var dic  = studentArray[i];
+		 $("p").append(dic.name);
+		 console.log(studentArray[i]);
+	  }
+	  
+	  
+
+	  
+	</script>
+	</body>
+</html>

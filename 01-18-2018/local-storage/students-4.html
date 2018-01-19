@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width" name="viewport">
+	<title></title>
+</head>
+<body>
+	<h1>Student Database</h1>
+
+	<label>What's the student name?</label>
+	<input id="yourName" type="text">	<br>
+
+	<button id="go">Save</button>
+	<a href="next-4.html">Show Students</a>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+	<script type="text/javascript">
+    // create an array to store the students
+	  var x = [];
+
+		$("#go").click(function(){
+
+		  // get the text inside the <input> box
+			var name = $("input#yourName").val();
+
+      // add the name to the array
+      x.push(name);
+
+			// convert the array into a String
+			var y = JSON.stringify(x);
+
+      // save name to local storage
+			localStorage.setItem("students", y);
+
+			alert("Saved!");
+
+			// debug only
+			console.log(localStorage.getItem("students"));
+		});
+	</script>
+</body>
+</html>

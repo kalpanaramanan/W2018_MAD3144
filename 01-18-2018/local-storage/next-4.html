@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<h1> Student Names </h1>
+
+<p id="abc"></p>
+
+<p id="def"></p>
+
+<a href="students-4.html"> Go Back </a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  // get students from the local localStorage
+  // remember - this comes as a STRING.
+  var x = localStorage.getItem("students")
+
+  // convert the string into an array
+  var students = JSON.parse(x);
+
+  // show each student on a new line
+  for (i = 0; i < students.length; i++) {
+    $("p#abc").append("hello " + students[i] + "<br>");
+  }
+
+  // another way to show each student on a new line
+  students.forEach(function(m) {
+    $("p#def").append("goodbye " + m + "<br>");
+  });
+
+
+  // debug only
+  console.log(x);
+  console.log(students);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<h1> Student Names </h1>
+
+<p></p>
+
+<a href="students-3.html"> Go Back </a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  // get the item from the localStorage
+  var x = localStorage.getItem("student");
+
+  // convert the String to an Object
+  var y = JSON.parse(x);
+  var msg = y.name + "," + y.id;
+  $("p").append(msg)
+
+  // debugging
+  console.log(x);
+  console.log(y);
+
+</script>
+</body>
+</html>
