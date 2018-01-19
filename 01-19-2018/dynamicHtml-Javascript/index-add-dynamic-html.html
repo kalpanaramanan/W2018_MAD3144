@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <style type="text/css">
+      p {
+        font-size:25px;
+      }
+      h1 {
+        font-size:20px;
+        color: red;
+      }
+      h2 {
+        font-size:16px;
+      }
+      button {
+        font-size:20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p> Step 1: Instructions:  Click on the picture! </p>
+    <img src="banana.png" id="banana">
+    <div class="fruits">
+      <h2> APPLE </h2>
+      <h2> CARROT </h2>
+    </div>
+
+    <p> Step 2:  Use JQuery to <em> dynamically </em> add some HTML </p>
+
+    <button id="addButton">ADD HTML to BODY</button>
+
+    <div class="animals">
+      <h2> ELEPHANT </h2>
+      <h2> FISH </h2>
+    </div>
+
+    <button id="addButton2"> ADD HTML inside ANOTHER TAG</button>
+
+    <div id="music"></div>
+
+    <div class="instruments">
+      <h2> PIANO </h2>
+      <h2> VIOLIN </h2>
+    </div>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // When user clicks on #addButton,
+      // dynamically add HTML to create a new button.
+      $("#addButton").click(function(){
+        var x = "<img src='cat.png' class='cat'>"
+        $("#addButton").after(x);
+      });
+
+      $("#addButton2").click(function(){
+        var x = "<img src='trumpet.png' class='trumpet'>"
+        $("#music").append(x);
+      });
+
+      // Tell system what to do when you click on "banana" button
+      $("#banana").click(function(){
+        $(".fruits").slideToggle();
+      });
+
+      // tell system what to do when you click on the cat picture
+      $(document.body).on("click", ".cat", function(){
+        $(".animals").slideToggle();
+      });
+
+      // tell system what to do when you click on the cat picture
+      $("#music").on("click", ".trumpet", function(){
+        $(".instruments").slideToggle();
+      });
+    </script>
+  </body>
+</html>

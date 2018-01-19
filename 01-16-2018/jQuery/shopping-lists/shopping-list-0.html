@@ -17,11 +17,15 @@
 		padding: 15px 15px;
 		color:white;
 		font-weght:700;
-		font-size:14px;
+		font-size:20px;
 		background:#17a2b8;
 		font-weight:bold;
 		width:150px;
-		margin-top:10px;
+		margin-top:5px;
+		height:45px;
+	}
+	#abc{
+		font-size:20px;
 	}
 	</style>
   </head>
@@ -32,7 +36,7 @@
     <h1> Shopping List </h1>
 
     <input type="text" id="abc" />
-    <button id="addToList">Add</button>
+    <button id="addToList">ADD</button>
 
     <ul id="list">
     </ul>
@@ -51,10 +55,14 @@
 
       });
 		
-		$("#list").on("click", "li", function() {
-        var x = this;
-        $(x).remove();
-      });
+	/*$("#list").on("click", "li", function() {
+			var x = this;
+			$(this).remove();
+      });*/
+	  
+	  $("#list").on("click","li",function(){
+			$(this).remove();	
+	  });
     </script>
   </body>
 </html>
