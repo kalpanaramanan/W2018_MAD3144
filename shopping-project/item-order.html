@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Shopping Cart</title>
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+   <!-- Compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	
+	<!-- for image slider -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+	<script src="js/shopping.js"></script>
+  </head>
+  <body>
+	 <div class= "container">
+	 
+	 <!-- write code for header here -->
+		<div class="row">
+			<div id="logo" class="col-8">
+				<a href="index.html" style="color:#000;text-decoration:none;font-family: 'Comic Sans MS', cursive, sans-serif;font-size:30px;">myShopping.com</a>
+			</div>
+			<div class="col-1  ml-auto">
+				<span style="display:inline;"><a class="menu" href=""><i class="fa fa-address-book" aria-hidden="true">About us</i></a></span>
+			</div>
+			<div class="col-1" >
+				<a class="menu" href=""><i class="fa fa-product-hunt" aria-hidden="true">Products</i></a>
+			</div>
+			<div class="col-1">
+				<a class="menu" href=""><i class="fa fa-shopping-cart" aria-hidden="true">Orders</i></a>
+			</div>	
+			<div class="col-1">
+				<a class="menu" href=""><i class="fa fa-globe" aria-hidden="true">Contact</i></a>
+			</div> 
+		</div><!-- header tag ends here -->
+		<div class="row">
+			<div id="logo" class="col-12">
+				<img src="img/cover-1.jpeg" />
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-4" style="border:1px solid red;width:100%;">
+				<h1>Personal Information</h1>
+				
+					<input type="text" name="username"  style="width:100%;" class ="username" placeholder="Enter your Name"/></br></br>
+					<input type="text" name="email" style="width:100%;" class ="emailAddress" placeholder="Email Address"/></br></br>
+					<input type="text" style="width:100%;" name="phonenumber" class ="phonenumber" placeholder="Phone Number(647-254-9870)"  required /></br></br>
+					
+			</div>
+			<div class="col-6 ml-auto" style="border:1px solid red;width:100%;">
+				<h1>Order Summary</h1>
+				
+				<p>
+					<input type="text" name="coupon"  class="coupon-text" placeholder="Enter Coupon Code"/>
+					<a class="btn btn-primary btn-lg active"  id="apply-coupon">Apply Coupon</a>
+				</p>
+				
+				<p>
+					<label class="order-subtotal">Sub-Total</label>		
+					<label class="order-subtotalAmount">$150.58</label>
+				</p>
+				<p>
+					<label class="order-tax">Tax(5%)</label>
+					<label class="order-taxAmt">$50.58</label>
+				</p>
+				<p>
+					<label class="order-shipping">Shipping</label>
+					<label class="order-shippingAmt">$150.58</label>
+				</p>
+				
+				<p>
+					<label class="order-discount">Discount(Apply Valid Coupon)</label>
+					<label class="order-discountAmt">$0.00</label>
+				</p>
+				
+				<p>
+					<label class="order-grandTotal">Grand Total</label>
+					<label class="order-grandTotalAmt">$350.58</label>
+				</p>
+				
+				<p>
+				<a  class="btn btn-primary btn-lg active" href="item-order.html" role="button" aria-pressed="true" style="width:80%;margin:10px;" id="payment">PAY</a>
+				</p>
+				
+			</div>
+		</div>
+		
+		<!-- write code for footer  here -->
+		<div class="row">
+			<div class="col-12" style="background-color:#424242;margin-top:40px;padding:5px;margin-bottom:20px;">
+				<p><a href="" class="footer-link">Terms and Conditions</a>
+				<a href="" class="footer-link">Privacy policy</a></p>
+				<p class="footer-copyright"><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 myShopping.com</p>
+			</div>
+		</div><!-- footer ends here -->
+  	</div>	
+
+  
+
+  <script type="text/javascript">
+  
+  
+  $(".username").on("blur", function() {
+    if ( $(this).val().match('^[a-zA-Z]{3,16}$') ) {
+       // alert( "Valid name" );
+    } else {
+       // alert("That's not a name");
+			$(this).val("");
+    }
+});
+
+
+ $(".emailAddress").on("blur", function() {
+	if ( $(this).val().match( '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$') ) {
+        //alert( "Valid Email" );
+    } else {
+        //alert("That's not a valid email");
+			$(this).val("");
+    }
+ });
+ 
+  $(".phonenumber").on("blur", function() {
+	if ( $(this).val().match('^[0-9]+\-[0-9]+\-[0-9]{4}$') ) {
+       // alert( "Valid Phone Number" );
+    } else {
+        //alert("That's not a valid Phone Number");
+		$(this).val("");
+    }
+ });
+ 
+ 
+  		var orderSummary = localStorage.getItem("orderSummary");
+		var  y = JSON.parse(orderSummary);
+		 $('.order-subtotalAmount').text(y[0].item_total);
+		 $('.order-taxAmt').text('$'+y[0].tax);
+		 $('.order-shippingAmt').text('$'+y[0].shipping);
+		 $('.order-grandTotalAmt').text('$'+y[0].product_grandTotalAmt);
+		 
+		 
+		(function(){
+		  emailjs.init("user_2UcmXlRYwGoN1uz2nk07d");
+		  console.log("intialized emailjs");
+	   })();
+   
+   
+		$('#payment').click(function(event) {
+		
+			if(($(".username").val() == "" )|| ($(".emailAddress").val() == "" )||($(".phonenumber").val() == "" )) {
+				alert("Personal Information cannot be empty ");
+			}else{
+				console.log("clicking");
+				//emailjs.send("gmail","template_Onr1WJnM",{name: "James", notes: "Check this out!"});
+				emailjs.send("gmail","template_Onr1WJnM",{name: "James", notes: "Check this out!"});
+				console.log("message sent");
+				event.preventDefault();
+			}
+				
+		});
+    
+	
+		$('#apply-coupon').click(function(event) {
+			if(($(".coupon-text").val() == "" )){
+				alert("Apply Coupon Code The Coupon Text BOx cannot be empty");
+			}
+
+				
+			if(($(".coupon-text").val() == "ABCD123" )){
+				var grandTotal =  $('.order-grandTotalAmt').text();
+				var arr = grandTotal.split('$');
+				var discount =	(arr[1]* (10/100));	
+				$('.order-discountAmt').text('$'+ discount);
+				$('.order-grandTotalAmt').text('$'+(arr[1] - discount));
+				event.preventDefault();
+			}else{
+				alert("Apply  Valid Coupon");
+			}
+		});
+
+
+		
+
+  </script>
+  
+  </body>	
+</html>

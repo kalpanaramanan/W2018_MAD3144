@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   
 	<script src="js/shopping.js"></script>
   </head>
@@ -28,10 +28,10 @@
 	<!-- write code for header here -->
 		<div class="row">
 			<div id="logo" class="col-8">
-				<h2>myShopping.com<h2>
+				<a href="index.html" style="color:#000;text-decoration:none;font-family: 'Comic Sans MS', cursive, sans-serif;font-size:30px;">myShopping.com</a>
 			</div>
 			<div class="col-1  ml-auto">
-				<a class="menu" href=""><i class="fa fa-address-book" aria-hidden="true">About us</i></a>
+				<span style="display:inline;"><a class="menu" href=""><i class="fa fa-address-book" aria-hidden="true">About us</i></a></span>
 			</div>
 			<div class="col-1" >
 				<a class="menu" href=""><i class="fa fa-product-hunt" aria-hidden="true">Products</i></a>
@@ -58,20 +58,25 @@
 				  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				  <li data-target="#myCarousel" data-slide-to="1"></li>
 				  <li data-target="#myCarousel" data-slide-to="2"></li>
+				  <li data-target="#myCarousel" data-slide-to="2"></li>
 				</ol>
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 				  <div class="item active">
-					<img src="img/banner-1.jpg" alt="Los Angeles" style="width:100%;">
+					<img src="img/cover-1.jpeg" alt="Los Angeles" style="width:100%;height:460px;">
 				  </div>
 
 				  <div class="item">
-					<img src="img/banner-1.jpg" alt="Chicago" style="width:100%;">
+					<img src="img/cover-2.jpeg" alt="Chicago" style="width:100%;height:460px;">
 				  </div>
 				
 				  <div class="item">
-					<img src="img/banner-1.jpg" alt="New york" style="width:100%;">
+					<img src="img/cover-3.jpeg" alt="New york" style="width:100%;height:460px;">
+				  </div>
+				  
+				   <div class="item">
+					<img src="img/cover-4.jpeg" alt="New New Orelans" style="width:100%;height:460px;">
 				  </div>
 				</div>
 
@@ -92,35 +97,43 @@
 		<!-- write code for shopping item  here -->
 				<div class="row" >
 					<div class="col-3">
-						<img src="img/banner.jpg" style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
-						<p>T-Shirt</p>
-						<p>$ 45</p>
-						<button class="btn">BUY</button>
+						<div id="item-catalogue">
+							<img src="img/women-l.jpeg" style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
+							<p>T-Shirt</p>
+							<p>$ 120</p>
+							<a href="item-list.html" id="women" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BUY</a>
+						</div>
 					</div>
 					<div class="col-3">
-						<img src="img/banner.jpg"  style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
-						<p>T-Shirt</p>
-						<p>$ 45</p>
-						<button class="btn">BUY</button>
+						<div id="item-catalogue">
+							<img src="img/men-l.jpeg" style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
+							<p>T-Shirt</p>
+							<p>$ 150</p>
+							<a href="item-list.html"  id="men" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BUY</a>
+						</div>
 					</div>
 					<div  class="col-3">
-						<img src="img/banner.jpg"  style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
-						<p>T-Shirt</p>
-						<p>$ 45</p>
-						<button class="btn">BUY</button>
+						<div id="item-catalogue">
+							<img src="img/girl-baby-l.jpeg"  style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
+							<p>T-Shirt</p>
+							<p>$ 506</p>
+							<a href="item-list.html"  id="girl-baby" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BUY</a>
+						</div>
 					</div>
 					<div class="col-3">
-						<img src="img/banner.jpg"  style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
-						<p>T-Shirt</p>
-						<p>$ 45</p>
-						<button class="btn">BUY</button>
+						<div id="item-catalogue">
+							<img src="img/boy-baby-l.jpeg"  style="width:100%;height:250px;margin-botton:40px;margin-top:40px;">
+							<p>T-Shirt</p>
+							<p>$ 400</p>
+							<a href="item-list.html" id="boy-baby" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BUY</a>
+						</div>
 					</div>
 				
 				</div><!-- shopping items ends here -->
 		
 		<!-- write code for footer  here -->
 		<div class="row">
-			<div class="col-12" style="background-color:#424242;margin-top:40px;padding:20px;">
+			<div class="col-12" style="background-color:#424242;margin-top:40px;padding:5px;margin-bottom:20px;">
 				<p><a href="" class="footer-link">Terms and Conditions</a>
 				<a href="" class="footer-link">Privacy policy</a></p>
 				<p class="footer-copyright"><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 myShopping.com</p>
@@ -129,5 +142,86 @@
 		</div><!-- footer ends here -->
 		
 	</div>	
+	
+	<script>
+	var studentArray = [];
+	
+	 $("#item-catalogue a").click(function() {
+         var id = $(this).attr('id');
+		 localStorage.setItem("product-catergory", id);
+		
+		 if( id == "men"){
+			var studentDict = {
+				"img"			: "img/men/men-l.jpeg",			
+				"img_link_one" 	:"img/men/men-l.jpeg",
+				"img_link_two"	:"img/men/men-link-2.jpeg",
+				"img_link_three":"img/men/men-link-3.jpeg",
+				"img_link_four" :"img/men/men-link-4.jpeg",
+				"product_header":"Billion PerfectFit Solid Men V-neck Grey, Black T-Shirt",
+				"product_description":"Look your ethnic best wearing this Redcoloured kurta pyjama set for men from the fashion house of Sanwara. Made from silk blend, this regular-fit kurta pyjama set comprises a full-sleeved kurta and pyjama to complete your look. Team this outfit with embroidered mojris and rock the party that you attend.",
+				"product_price": "$150",
+				"product_delivery" : "Usually delivered in 5-10 day",
+				"product_stock" :"Yes"
+			}
+			studentArray.push(studentDict);
+			var person2 = JSON.stringify(studentArray);
+			localStorage.setItem("student",person2);
+		 }
+		 if ( id == "women"){
+			var studentDict = {
+				"img"			: "img/women/women-l.jpeg",			
+				"img_link_one" 	:"img/women/women-l.jpeg",
+				"img_link_two"	:"img/women/women-link-1.jpeg",
+				"img_link_three":"img/women/women-link-1.jpeg",
+				"img_link_four" :"img/women/women-link-1.jpeg",
+				"product_header":"Rare Casual 3/4th Sleeve Solid Women's Pink Top",
+				"product_description":"Looking your best is no longer an ordeal! RARE has a wardrobe solution for every casual occasion. Size is not an issue any more. Its all about preference, your preference! This casual sexy creation goes with just about any pair of jeans. As for heels or flats, again it’s up to you. No need to worry about muffin tops and awkward bulges, the light material flows lightly over your mid section and around the arms creating the perfect fit.  Georgette round neck 3/4 Sleeve Solid Dress.So you have the confidence to conquer and the style to inspire.",
+				"product_price": "$120",
+				"product_delivery" : "Usually delivered in 5-10 day",
+				"product_stock" :"Yes"
+			}
+			studentArray.push(studentDict);
+			var person2 = JSON.stringify(studentArray);
+			localStorage.setItem("student",person2);
+		 }
+		 if ( id == 'girl-baby'){
+			var studentDict = {
+				"img"			: "img/girl-baby/girl-baby-l.jpeg",			
+				"img_link_one" 	:"img/girl-baby/girl-baby-link-1.jpeg",
+				"img_link_two"	:"img/girl-baby/girl-baby-link-2.jpeg",
+				"img_link_three":"img/girl-baby/girl-baby-link-3.jpeg",
+				"img_link_four" :"img/girl-baby/girl-baby-link-4.jpeg",
+				"product_header":"Aarika Girls Midi/Knee Length Party Dress  (Black, Sleeveless)",
+				"product_description":"Make your little girl the cynosure of all eyes when you dress her up in this beautiful party wear frock from the house of Aarika. This V-neck frock made from net Fabric will provide a comfortable and regular fit to your little one. You can team this Frock with cute shoes or sandals to complete your girl's everyday look. This frock is lightweight and self design. Dress to impress with AARIKA's beautiful selection of girl's occasion dresses. Here you can find a wide range of Indian ethnic kids wear and party wear, which includes kids Frocks, Lehenga Choli and Salwar Kameez, Gown, Dress, Pari Dress etc. This Festive Season- Go Ethnic !!",
+				"product_price": "$506",
+				"product_delivery" : "Usually delivered in 15-20 day",
+				"product_stock" :"No"
+			}
+			studentArray.push(studentDict);
+			var person2 = JSON.stringify(studentArray);
+			localStorage.setItem("student",person2);
+		}
+
+		 if ( id == "boy-baby"){
+			var studentDict = {
+				"img"			: "img/boy-baby/boy-baby-l.jpeg",			
+				"img_link_one" 	:"img/boy-baby/boy-baby-l.jpeg",
+				"img_link_two"	:"img/boy-baby/boy-baby-link-2.jpeg",
+				"img_link_three":"img/boy-baby/boy-baby-link-3.jpeg",
+				"img_link_four" :"img/boy-baby/boy-baby-link-4.jpeg",
+				"product_header":"AJ Dezines Boys Sherwani and Churidar Set",
+				"product_description":"Make your boy look like prince by buying him this Maroon 3-piece Indo Western set from AJ Dezines. Made from cotton blend material, this boys ethnic wear set comprises churidar bottoms, kurta and waistcoat. The waistcoat has nehru collar that makes your boy look all the more stylish and give him perfect traditional look. The fit is regular for boys clothing. This boys ethnic dress is ideal for the special parties, functions, festival, wedding and other occasion. Club it with a pair of mojaris for perfect traditional look. We are leading Brand in kids wear with wide range of kids clothing which includes kids ethnic wear, casual wear, accessories and a lot more.",
+				"product_price": "$400",
+				"product_delivery" : "Usually delivered in 3-5 days",
+				"product_stock" :"No"
+			}
+			studentArray.push(studentDict);
+			var person2 = JSON.stringify(studentArray);
+			localStorage.setItem("student",person2);
+		}
+	
+			
+    });
+	</script>
   </body>
 </html>

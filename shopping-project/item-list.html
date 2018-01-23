@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Shopping Cart</title>
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+   <!-- Compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	
+	<!-- for image slider -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  
+	<script src="js/shopping.js"></script>
+  </head>
+  <body>
+    <div class= "container">
+		<!-- write code for header here -->
+		<div class="row">
+			<div id="logo" class="col-8">
+				<a href="index.html" style="color:#000;text-decoration:none;font-family: 'Comic Sans MS', cursive, sans-serif;font-size:30px;">myShopping.com</a>
+			</div>
+			<div class="col-1  ml-auto">
+				<span style="display:inline;"><a class="menu" href=""><i class="fa fa-address-book" aria-hidden="true">About us</i></a></span>
+			</div>
+			<div class="col-1" >
+				<a class="menu" href=""><i class="fa fa-product-hunt" aria-hidden="true">Products</i></a>
+			</div>
+			<div class="col-1">
+				<a class="menu" href=""><i class="fa fa-shopping-cart" aria-hidden="true">Orders</i></a>
+			</div>	
+			<div class="col-1">
+				<a class="menu" href=""><i class="fa fa-globe" aria-hidden="true">Contact</i></a>
+			</div> 
+		</div><!-- header tag ends here -->
+		
+		<div class="row">
+			<div id="logo" class="col-12">
+				<img src="img/cover-1.jpeg" />
+			</div>
+		</div>
+		<!-- Code for product image -->
+		<div class="row">
+			<div class="col-1">
+					<img src="img/women/women-l.jpeg" id ="item-banner-img-1" style="width:100%;height:70px;border-bottom:1px white solid;margin-top:10px;margin-bottom:10px;"/>
+					<img src="img/women/women-link-2.jpeg" id ="item-banner-img-2" style="width:100%;height:70px;border-bottom:1px white solid;margin-top:10px;margin-bottom:10px;"/>
+					<img src="img/women/women-link-3.jpeg" id ="item-banner-img-3" style="width:100%;height:70px;border-bottom:1px white solid;margin-top:10px;margin-bottom:10px;"/>
+					<img src="img/women/women-link-4.jpeg" id ="item-banner-img-4" style="width:100%;height:70px;border-bottom:1px white solid;margin-top:10px;margin-bottom:10px;"/>
+			</div>
+			<div class="col-3" >
+				<img id ="item-banner-img"  style="width:100%;height:300px;border:1px white solid;margin-top:10px;"/>
+			</div>
+			
+			<div class="col-8">
+				<h3 class="product-header">Rare Casual 3/4th Sleeve Solid Women's Pink Top</h3>
+				<div class="product-review">Reviews 4.6
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star" style="color:#2EC486;" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+				</div>
+				<p class="product-description">Looking your best is no longer an ordeal! RARE has a wardrobe solution for every casual occasion. 
+					Size is not an issue any more. It’s all about preference, your preference! This casual sexy creation goes with just about any pair of jeans.
+					 As for heels or flats, again it’s up to you. No need to worry about muffin tops and awkward bulges, the light material flows lightly over your mid section and around the arms creating the perfect fit. 
+					Georgette round neck 3/4 Sleeve Solid Dress.So you have the confidence to conquer and the style to inspire.</p>
+					<p class="product-price" style="font-size:25px;font-weight:bold;font-family:arial;">Price: ₹356</p>
+					<input type="text" name="product-catergory" class="product-catergory" value="women">
+			</div>
+		</div>
+		<!-- Code for button and inputs  -->
+		<div class="row">
+			<div class="col-2">
+				
+				<a  class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="width:100%;margin:10px;" id="add-to-cart">ADD TO CART</a>
+			</div>
+			
+			<div class="col-2">
+				
+				<a href="item-summary.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="width:100%;margin:10px;" id="buy-order">BUY ORDER</a>
+			</div>
+			<div class="col-4">
+				 <span style="width:100%;">Quanity  <input type="number" value="1" min="1" name="product-quanity" class="product-quanity"></span>
+			</div>
+			
+			<div class="col-4">
+				 <span style="width:100%;">Size  <select name="product-size" class="product-size">
+					<option value="1"> S </option>
+					<option value="1"> L </option>
+					<option value="1"> XL </option></select></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<a href="index.html">Go Back</a>
+			</div>
+		</div>
+		<!-- Code for button and inputs  -->
+		<div class="row">
+			<div class="col-4  ml-auto ">
+				 <span style="width:100%;">Shipping<span style="color:red;">*</span>  <label  class="product-delivery">Usually delivered in 3-4 day</label></span>
+			</div>
+			
+			<div class="col-4">
+				<span style="width:100%;">In Stock <label class="product-stock" >Yes</label></span>
+			</div>
+		</div>
+		
+		<!-- write code for footer  here -->
+		<div class="row">
+			<div class="col-12" style="background-color:#424242;margin-top:40px;padding:5px;margin-bottom:20px;">
+				<p><a href="" class="footer-link">Terms and Conditions</a>
+				<a href="" class="footer-link">Privacy policy</a></p>
+				<p class="footer-copyright"><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 myShopping.com</p>
+			</div>
+		</div><!-- footer ends here -->
+	</div>
+	<script>
+		
+	
+		
+		// check if there are any items in the localStorage
+		var x = localStorage.getItem("items");
+		if (x === null) {
+			var itemArray = [];
+		}
+		else {
+			var items = JSON.parse(x);
+			console.log(items);
+			var itemArray = items;
+			console.log(itemArray);
+		}
+		
+		console.log("ARE THERE ANY ITEMs IN STORAGE? " + x);
+		
+		
+		var nextArr = [];
+		$('.product-catergory').val(localStorage.getItem('product-catergory'));	
+		
+		var studentArray = localStorage.getItem("student");
+		var  y = JSON.parse(studentArray);
+		
+		
+		$('#item-banner-img').attr('src',y[0].img);
+		$('#item-banner-img-1').attr('src',y[0].img_link_one);
+		$('#item-banner-img-2').attr('src',y[0].img_link_two);
+		$('#item-banner-img-3').attr('src',y[0].img_link_three);
+		$('#item-banner-img-4').attr('src',y[0].img_link_four);
+		$('.product-header').html(y[0].product_header);
+		$('.product-description').text(y[0].product_description);
+		$('.product-price').text(y[0].product_price);
+		$('.product-delivery').text(y[0].product_delivery);
+		$('.product-stock').text(y[0].product_stock);
+		
+		
+		if(y[0].product_stock == 'No'){
+			$('.product-stock').css({"color":"red","font-size":"20px"});
+			$('#add-to-cart').attr('disabled','disabled');
+			$('#buy-order').attr('disabled','disabled');
+		}else if(y[0].product_stock == 'Yes'){
+			$('.product-stock').css({"color":"green","font-size":"20px"});
+			$('#add-to-cart').removeAttr('disabled','disabled');
+			$('#buy-order').removeAttr('disabled','disabled');
+		}
+		
+		$("#add-to-cart").click(function() {
+		
+			var img_src = $('#item-banner-img').attr('src');
+			
+			var product_header = $('.product-header').html();
+			var product_description = $('.product-description').html();
+			var product_price = $('.product-price').html();
+			var product_quantity = $('.product-quanity').val();
+			var product_size = $( ".product-size option:selected" ).text();
+
+			var itemDict = {
+				"img_src" : img_src,
+				"product_header" : product_header,
+				"product_description" : product_description,
+				"product_price" : product_price,
+				"product_quantity" : product_quantity,
+				"product_size" : product_size
+			}
+			
+			itemArray.push(itemDict);
+			console.log(itemArray);
+			 
+			var items = JSON.stringify(itemArray);
+			localStorage.setItem("items",items);
+			
+		});
+		</script>
+  </body>
+</html>
