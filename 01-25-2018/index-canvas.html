@@ -59,14 +59,20 @@
 		context.stroke();
 		
 		
-		//DRAW SQUARE
-		var x = 0 ;
+		//DRAW SQUARE  - SOULTION 1
+		/*var x = 0 ;
 		for (i = 0; i < 20; i++) { 
 			context1.fillStyle = "green";
 			context1.fillRect(x,40,40,40);
 			x = x + 70;
-		}
+		}*/
 		
+		
+		//DRAW SQUARE  - SOULTION 2
+		for (i = 0; i < 20; i++) { 
+			context1.fillStyle = "green";
+			context1.fillRect(i*70,40,40,40);
+		}
 		
 	</script>
 	
