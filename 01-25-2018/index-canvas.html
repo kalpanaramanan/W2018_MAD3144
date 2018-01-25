@@ -84,11 +84,21 @@
 		// DRAW RECTANGLE ON RANDOM POSITION
 		
 		
-		for (i = 0; i < 20; i++) {
+		/*for (i = 0; i <1000; i++) {
 			var x = Math.random()*window.innerWidth;
 			var y = Math.random()*window.innerWidth;
 			context1.strokeRect(x,y,50,50);
 			
+		}*/
+		
+		
+		var x =10;
+		function animate(){
+			requestAnimationFrame(animate);
+			console.log("tryf to nimate");
+			context1.strokeRect(x,25,50,50);
+			x = x+1;
+		
 		}
 	</script>
 	
