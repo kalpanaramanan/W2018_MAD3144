@@ -12,7 +12,7 @@
 		
 		#myCanvas1{
 			border:1px solid red;
-			padding:10px;
+			
 		
 		}
 	</style>
@@ -37,7 +37,7 @@
 		//canvas.height = window.innerHeight;
 		
 		canvas1.width = window.innerWidth;
-		//canvas1.height = window.innerHeight;
+		canvas1.height = window.innerHeight;
 		
 		//GET A CONTEXT
 		var context = canvas.getContext("2d");
@@ -69,11 +69,27 @@
 		
 		
 		//DRAW SQUARE  - SOULTION 2
-		for (i = 0; i < 20; i++) { 
-			context1.fillStyle = "green";
+		/*for (i = 0; i < 20; i++) { 
+			context1.fillStyle = "blue";
 			context1.fillRect(i*70,40,40,40);
-		}
+		}*/
 		
+		
+		//DRAW SQUARE  - SOULTION 3
+		/*for (i = 0; i < 1400; i+=70) { 
+			context1.fillStyle = "red";
+			context1.fillRect(i,40,40,40);
+		}*/
+		
+		// DRAW RECTANGLE ON RANDOM POSITION
+		
+		
+		for (i = 0; i < 20; i++) {
+			var x = Math.random()*window.innerWidth;
+			var y = Math.random()*window.innerWidth;
+			context1.strokeRect(x,y,50,50);
+			
+		}
 	</script>
 	
   </body>
