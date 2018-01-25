@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Canvas Example</title>
+	<style >
+		#myCanvas{
+			border:1px solid red;
+		
+		}
+		
+		#myCanvas1{
+			border:1px solid red;
+			padding:10px;
+		
+		}
+	</style>
+  </head>
+  <body>
+	<canvas id="myCanvas"></canvas><br><br>
+	
+	<canvas id="myCanvas1"></canvas>
+	
+	<script>
+	
+	//OTIONAL - CHANGE WDTH AND HEIGHT OF CANVAS
+		var canvas = document.getElementById("myCanvas");
+		canvas.width = 1000;
+		canvas.height = 500;
+		
+		
+		var canvas1 = document.getElementById("myCanvas1");
+		
+		//FULL SCREEN 
+		//canvas.width = window.innerWidth;
+		//canvas.height = window.innerHeight;
+		
+		canvas1.width = window.innerWidth;
+		//canvas1.height = window.innerHeight;
+		
+		//GET A CONTEXT
+		var context = canvas.getContext("2d");
+		var context1 = canvas1.getContext("2d");
+		
+		//DRAW RECTANGLE
+		context.strokeRect(100,50,50,50);
+		context.strokeRect(200,0,50,50);
+		context.strokeRect(40,100,50,150);
+		
+		
+		//DRAW A LINE
+		context.beginPath();
+		context.moveTo(50,300);
+		context.lineTo(300,150);
+		
+		context.moveTo(100,100);
+		context.lineTo(200,200);
+		context.stroke();
+		
+		
+		//DRAW SQUARE
+		var x = 0 ;
+		for (i = 0; i < 20; i++) { 
+			context1.fillStyle = "green";
+			context1.fillRect(x,40,40,40);
+			x = x + 70;
+		}
+		
+		
+	</script>
+	
+  </body>
+</html>
