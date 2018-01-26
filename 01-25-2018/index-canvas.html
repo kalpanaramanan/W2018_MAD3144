@@ -23,6 +23,10 @@
 	<canvas id="myCanvas1"></canvas>
 	
 	<script>
+	 /* Refrences 
+			https://gist.github.com/anonymous/337c941089182162d9d7dc9ee2b1ce2a 
+			https://gist.github.com/anonymous/b75a80ec352e313f4d4c731dc9bfac1e
+	 */
 	
 	//OTIONAL - CHANGE WDTH AND HEIGHT OF CANVAS
 		var canvas = document.getElementById("myCanvas");
@@ -92,14 +96,90 @@
 		}*/
 		
 		
-		var x =10;
+		var x =10; 
+		var y = 10; 
+		var speed = 3;
+		
+		var x1 =10; 
+		var y1 = 10; 
+		var speed1 = -1;
+		
+		
+		var x2 =10; 
+		var y2 = 10; 
+		var speed2 = -5;
+		
 		function animate(){
 			requestAnimationFrame(animate);
 			console.log("tryf to nimate");
-			context1.strokeRect(x,25,50,50);
-			x = x+1;
+			//context1.strokeRect(x,25,50,50);
+			//context1.strokeRect(25,y,50,50);
+			context1.clearRect(0,0,canvas1.width,canvas1.height);
+			context1.strokeRect(x,50,50,50);
+			context1.strokeRect(x1,150,50,50);
+			context1.strokeRect(x2,250,50,50);
+			
+			//x = x - speed; // 5 will increase the speed of rectangle been animated
+			//y = y - speed;
+			
+			// if you want the animaton to go left to right then it is x + speed
+			// if you want the animaton to go  right to left then it is x + speed
+		
+		
+		//speed fo square
+			if (x < 0){
+					speed = speed * -1;
+			}
+			
+			if(x > canvas1.width){
+				speed = speed * -1;
+			}
+			x = x + speed;
+			
+			if (x1 < 0){
+					speed1 = speed1 * -1;
+			}
+			
+			if(x1 > canvas1.width){
+				speed1 = speed1 * -1;
+			}
+			x1 = x1 + speed1;
+			
+			if (x2 < 0){
+					speed2 = speed2 * -1;
+			}
+			
+			if(x2 > canvas1.width){
+				speed2 = speed2 * -1;
+			}
+			x2 = x2 + speed2;
 		
 		}
+		
+		
+		
+		//animate();
+		
+		
+		var speed3 = 3;
+		
+		function randomRectAnimate(){
+			for (i = 0; i <10; i++) {
+				var x = Math.random()*window.innerWidth;
+				var y = Math.random()*window.innerWidth; 
+			
+				
+				context1.strokeRect(0,i+50,50,50);
+				
+				if(x3 > canvas1.width){
+					speed3 = speed3 * -1;
+				}
+				x3 = x3 + speed3;
+			
+			}
+		
+		}
+		//randomRectAnimate();
 	</script>
 	
   </body>
