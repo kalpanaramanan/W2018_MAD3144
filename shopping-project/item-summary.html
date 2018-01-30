@@ -127,65 +127,139 @@
 				<p class="footer-copyright"><!--<i class="fa fa-copyright" aria-hidden="true"></i>--> &copy; 2018 myShopping.com</p>
 			</div>
 		</div><!-- footer ends here -->
-	</div>	
+		
+			
 	
 	<script>
 		var itemArray = localStorage.getItem("items");
 		var  y = JSON.parse(itemArray);
 		console.log("How man items are in array? " + y.length);
 		var orderSummaryArray = [];
-		console.log(y);
+		//console.log(y);
 		var  item_total = 0;
-	 for (i=0;i<y.length;i++){
+		var  sum = 0;
+		var html = "";
+	 for (i = 0;i < y.length;i++){
 		var dic  = y[i];
-		var arr = dic.product_price.split('$');
-		  item_total = (dic.product_quantity * arr[1]);
-		$(".item_img").attr("src" ,dic.img_src);
-		$('.item_header').html(dic.product_header);
-		$('.item_description').text(dic.product_description);
-		$('.item_price').text(dic.product_price);
-		$('.item_quantity').text(dic.product_quantity);
-		$('.item_size').text(dic.product_size);
+		var arr = y[i].product_price.split('$');
+		item_total = (y[i].product_quantity * arr[1]);
+		
+		sum += (y[i].product_quantity * arr[1]);
+		$(".item_img").attr("src" ,y[i].img_src);
+		$('.item_header').html(y[i].product_header);
+		$('.item_description').text(y[i].product_description);
+		$('.item_price').text(y[i].product_price);
+		$('.item_quantity').text(y[i].product_quantity);
+		$('.item_size').text(y[i].product_size);
 		$('.item_total').text('$'+item_total);
-		 console.log(y[i]);
-		 
-		var html = 		"<div class ='col-12'>"	
-					+		"<img class='item_img' style='width:100px;height:150px;' src='" + dic.img_src + "'>"
-					+		" <p> <h4 class='item_header' style='font-weight:bold'>" + dic.product_header + "</h4>"
-					+		"<h5 class='item_description'>" + dic.product_description + "</h5></p>"
-					+		"<label class='item_price'>" + dic.product_price + "</label>"
-					+		"<label class='item_quantity'>" + dic.product_quantity + "</label>"
-					+		"<label class='item_size'>" + dic.product_size + "</label>"
-					+ 	 "<button class='remove_item'>Remove</button>"
-					+		"<label class='item_total'>" + item_total + "</label>"
-					+ 	"</div>";
+		console.log(y[i]);
+		
+		 html += 		// "<div  id ='" + i +"'> "	+
+							"<div class='col-2'><img class='item_img_"+i+"' style='width:100px;height:150px;' src='" + y[i].img_src + "'></div>"
+					+		"<div  class='col-5'> <p> <h4 class='item_header_"+i+"'  style='font-weight:bold'>" + y[i].product_header + "</h4>"
+					+		"<h5 class='item_description_"+i+"' >" + y[i].product_description + "</h5></p></div>"
+					+		"<div  class='col-1'><label class='item_price_"+i+"'>" + y[i].product_price + "</label></div>"
+					+		"<div  class='col-1'><label class='item_quantity_"+i+"' >" + y[i].product_quantity + "</label></div>"
+					+		"<div  class='col-1'><label class='item_size_"+i+"' >" + y[i].product_size + "</label></div>"
+					+ 	 "<div  class='col-1'><button  class='remove_item' id='remove_item_"+i+"' >Remove</button></div>"
+					+		"<div  class='col-1'><label   class='item_total_"+i+"' >" + item_total + "</label></div>";
+				//	+ 	"</div>";
+					
 		 
 		
-		$("#abc").append(html);
+		
 	  }
 	  
+	 $("#abc").append(html);
 	  
-	  $('.product-subtotalAmount').text('$'+item_total);
-		var tax = (item_total*(5/100));
-		var shipping = (item_total*(10/100));
-		var product_grandTotalAmt = (item_total + tax + shipping);
-		 $('.product-taxAmt').text('$'+tax);
-		 $('.product-shippingAmt').text('$'+shipping);
-		 $('.product-grandTotalAmt').text('$'+product_grandTotalAmt);
-		 
-		 var orderSummaryDict = {
-				"item_total" : item_total,
-				"tax" : tax,
-				"shipping" : shipping,
-				"product_grandTotalAmt" : product_grandTotalAmt
-			}
+
+		
+	
+	 $(".remove_item").click(function() {
+		var getID = this.id;
+		var arr = this.id.split('_');
+		var i = arr[2];
+		alert(arr[2]);
+		var sum1 = 0;
+		$('.item_img_'+i).remove();
+		$('.item_header_'+i).remove();
+		$('.item_description_'+i).remove();
+		$('.item_price_'+i).remove();
+		$('.item_quantity_'+i).remove();
+		$('.item_size_'+i).remove();
+		$('#remove_item_'+i).remove();
+		$('.item_total_'+i).remove();
+
+		y.splice(i, 1);
+		console.log(y);
+		var z = y;
+		for (i = 0;i < z.length;i++){
+			var dic  = z[i];
+			var arr1 = z[i].product_price.split('$');
+			item_total = (z[i].product_quantity * arr1[1]);
 			
-			orderSummaryArray.push(orderSummaryDict);
-			
-			 
-			var orderSummary = JSON.stringify(orderSummaryArray);
-			localStorage.setItem("orderSummary",orderSummary);
-		 
+			sum1 += (z[i].product_quantity * arr1[1]);
+		}
+		
+		$('.product-subtotalAmount').text('$'+sum1);
+		var tax1 = (sum1*(5/100));
+		var shipping1 = (sum1*(10/100));
+		var product_grandTotalAmt1 = (sum1 + tax1 + shipping1);
+		$('.product-taxAmt').text('$'+tax);
+		$('.product-shippingAmt').text('$'+shipping1);
+		$('.product-grandTotalAmt').text('$'+product_grandTotalAmt1);
+		y = z;
+		
+		
+		
+	});
+	
+	
+	$('.product-subtotalAmount').text('$'+sum);
+	var tax = (sum*(5/100));
+	var shipping = (sum*(10/100));
+	var product_grandTotalAmt = (sum + tax + shipping);
+	$('.product-taxAmt').text('$'+tax);
+	$('.product-shippingAmt').text('$'+shipping);
+	$('.product-grandTotalAmt').text('$'+product_grandTotalAmt);
+	 
+/*	var orderSummaryDict = {
+		"item_total" : sum,
+		"tax" : tax,
+		"shipping" : shipping,
+		"product_grandTotalAmt" : product_grandTotalAmt
+	}
+		
+	orderSummaryArray.push(orderSummaryDict);
+	
+	var orderSummary = JSON.stringify(orderSummaryArray);
+	localStorage.setItem("orderSummary",orderSummary);
+	*/
+	
+	$("#check-out").click(function() {
+	
+	
+	var sum2 = $('.product-subtotalAmount').text();
+
+	var tax2 = $('.product-taxAmt').text().split('$')[1];
+	var shipping2 = $('.product-shippingAmt').text().split('$')[1];
+	var product_grandTotalAm2 = $('.product-grandTotalAmt').text().split('$')[1];
+	
+	
+	 var orderSummaryDict = {
+		"item_total" : sum2,
+		"tax" : tax2,
+		"shipping" : shipping2,
+		"product_grandTotalAmt" : product_grandTotalAm2
+	}
+	
+	orderSummaryArray.push(orderSummaryDict);
+	
+	var orderSummary = JSON.stringify(orderSummaryArray);
+	localStorage.setItem("orderSummary",orderSummary);
+	
+	});
+	
 	</script>
   </body>
 </html>

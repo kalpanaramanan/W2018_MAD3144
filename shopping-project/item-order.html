@@ -53,13 +53,13 @@
 			<div class="col-4" style="border:1px solid red;width:100%;">
 				<h1>Personal Information</h1>
 				
-					<input type="text" name="username"  style="width:100%;" class ="username" placeholder="Enter your Name"/></br></br>
-					<input type="text" name="email" style="width:100%;" class ="emailAddress" placeholder="Email Address"/></br></br>
-					<input type="text" style="width:100%;" name="phonenumber" class ="phonenumber" placeholder="Phone Number(647-254-9870)"  required /></br></br>
+					<input type="text" name="username"  style="width:100%;" class ="username" placeholder="Enter your Name" value="Kalpana"/></br></br>
+					<input type="text" name="email" style="width:100%;" class ="emailAddress" placeholder="Email Address" value="kalpana@gmail.com"/></br></br>
+					<input type="text" style="width:100%;" name="phonenumber" class ="phonenumber" placeholder="Phone Number(647-254-9870)" value="647-254-9870" required /></br></br>
 					
 			</div>
 			<div class="col-6 ml-auto" style="border:1px solid red;width:100%;">
-				<h1>Order Summary</h1>
+				<h1>Order Summary - #<span id="order-id" style="color:#FF6575"></span></h1>
 				
 				<p>
 					<input type="text" name="coupon"  class="coupon-text" placeholder="Enter Coupon Code"/>
@@ -110,7 +110,7 @@
 
   <script type="text/javascript">
   
-  
+	$('#order-id').text(Math.floor(Math.random()*90000) + 10000);
   $(".username").on("blur", function() {
     if ( $(this).val().match('^[a-zA-Z]{3,16}$') ) {
        // alert( "Valid name" );
@@ -142,6 +142,8 @@
  
   		var orderSummary = localStorage.getItem("orderSummary");
 		var  y = JSON.parse(orderSummary);
+		console.log(y);
+		console.log(y[0].item_total);
 		 $('.order-subtotalAmount').text(y[0].item_total);
 		 $('.order-taxAmt').text('$'+y[0].tax);
 		 $('.order-shippingAmt').text('$'+y[0].shipping);
@@ -159,13 +161,14 @@
 			if(($(".username").val() == "" )|| ($(".emailAddress").val() == "" )||($(".phonenumber").val() == "" )) {
 				alert("Personal Information cannot be empty ");
 			}else{
-				console.log("clicking");
+				console.log("Order Confirmed Successfully");
 				//emailjs.send("gmail","template_Onr1WJnM",{name: "James", notes: "Check this out!"});
 				emailjs.send("gmail","template_Onr1WJnM",{name: "James", notes: "Check this out!"});
 				console.log("message sent");
 				event.preventDefault();
+				alert("Order Confirmed Successfully");
 			}
-				
+		localStorage.clear();
 		});
     
 	
@@ -179,7 +182,7 @@
 				var grandTotal =  $('.order-grandTotalAmt').text();
 				var arr = grandTotal.split('$');
 				var discount =	(arr[1]* (10/100));	
-				$('.order-discountAmt').text('$'+ discount);
+				$('.order-discountAmt').text('$'+ discount.toFixed(2));
 				$('.order-grandTotalAmt').text('$'+(arr[1] - discount));
 				event.preventDefault();
 			}else{
