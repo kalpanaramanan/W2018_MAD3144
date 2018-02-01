@@ -1,0 +1,42 @@
+
+Setting environment for using XAMPP for Windows.
+715368@228-IMAC23 c:\xampp
+# mysql -u root -p
+Enter password: ********
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+
+715368@228-IMAC23 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 71
+Server version: 10.1.21-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use mad3142_db;
+Database changed
+MariaDB [mad3142_db]> show tables;
++----------------------+
+| Tables_in_mad3142_db |
++----------------------+
+| employees            |
++----------------------+
+1 row in set (0.00 sec)
+
+MariaDB [mad3142_db]> select * from employees;
++----+------------+-------------+------------+
+| id | first_name | last_name   | hire_date  |
++----+------------+-------------+------------+
+|  0 | Emad       | Nasarali    | 2016-04-05 |
+|  1 | Pritesh    | Patel       | 2017-03-03 |
+|  2 | Marcos     | Bittencourt | 2015-04-20 |
+|  3 | Jenelle    | C           | 2017-11-01 |
+|  4 | William    | P           | 2014-09-15 |
++----+------------+-------------+------------+
+5 rows in set (0.00 sec)
+
+MariaDB [mad3142_db]>
+

@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1> ADMIN PANEL </h1>
+      <h1> CREATE PANEL </h1>
     </header>
 
     <nav>
@@ -27,6 +27,25 @@
     </nav>
 
     <div clas="container">
+		<h2>
+			<?php
+				if ($_SERVER["REQUEST_METHOD"] == "POST"){
+					
+					$firstName = $_POST["firstName"];
+					echo "First Name is :".$firstName."<br>";
+					
+					$lastName = $_POST["lastName"];
+					echo "Last Name is :".$lastName."<br>";
+					
+					
+					$hireDate = $_POST["hireDate"];
+					echo "Hire Date is :".$hireDate."<br>";
+					
+				}else{
+					header("Location"."addEmployee.php");
+				}
+			?>
+		</h2>
     </div>
 
     <footer>

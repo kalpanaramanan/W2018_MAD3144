@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1> ADMIN PANEL </h1>
+      <h1> ADD EMPLOYEE PANEL </h1>
     </header>
 
     <nav>
@@ -23,10 +23,29 @@
 		<li>
 			<a href="#">Courses</a>
         </li>
+		
       </ul>
+	  
+	  <a href="employees.php">Go Back >> </a>
     </nav>
 
     <div clas="container">
+	
+		<form action="create.php" method="POST" class="form-group">
+			<label class="form-label" for="firstName">First Name</label>
+			<input type="text" name="firstName" value="" />
+
+			<label class="form-label" for="lastName">Last Name</label>
+			<input type="text" name="lastName" value="" />
+		  
+			<label class="form-label" for="hireDate">Hire Date</label>
+			<input type="date"  name="hireDate" value="" />
+			
+			<p><br>
+				<input type="submit" value="Create Employee" />
+			</p>
+		</form>
+	
     </div>
 
     <footer>

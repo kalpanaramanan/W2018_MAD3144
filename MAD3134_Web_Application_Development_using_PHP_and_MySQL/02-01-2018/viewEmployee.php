@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1> ADMIN PANEL </h1>
+      <h1> VIEW EMPLOYEE PANEL </h1>
     </header>
 
     <nav>
@@ -27,6 +27,23 @@
     </nav>
 
     <div clas="container">
+	<h2>
+	<?php
+
+		$id = $_GET["id"];
+		echo "The id is: " . $id."<br>";
+
+		$firstname = $_GET["firstname"];
+		echo "The firstname is: " . $firstname."<br>";
+
+		$lastname = $_GET["lastname"];
+		echo "The lastname is: " . $lastname."<br>";
+		
+		$hire_date = $_GET["hire_date"];
+		echo "The hire_date is: " . $hire_date."<br>";
+
+	?>
+</h2>
     </div>
 
     <footer>
