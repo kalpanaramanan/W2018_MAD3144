@@ -11,6 +11,7 @@ $pickup = $_GET["pickup"];
 $dropup = $_GET["dropup"];
 $timings = $_GET["timings"];
 $status1 = $_GET["status"];
+$notes = $_GET["notes"];
 
 $str = explode(":",$timings);
 $str1 = explode(" ",$str[1]);
@@ -31,7 +32,7 @@ if (mysqli_connect_errno())
   exit();
 }
 
- $sql = "SELECT r.id as id,fl.name as pickup,tl.name as dropup, r.timings as timings,s.name as status,r.saturday as saturday
+ $sql = "SELECT r.id as id,fl.name as pickup,tl.name as dropup, r.timings as timings,s.name as status,r.saturday as saturday,r.notes as notes
 				FROM `routes` as r
 				INNER JOIN city as fl on fl.id = r.from
 				INNER JOIN city as tl on tl.id = r.to
@@ -45,6 +46,7 @@ if ($results == FALSE) {
   echo "SQL command: " . $sql;
   exit();
 }
+
 
 // it's different! you only need to get 1 person, so no loop!
 $routes = mysqli_fetch_assoc($results);
@@ -111,7 +113,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 	  $mintues = $_POST['mintues'];
 	  $time = $_POST['time'];
 	  $statusw = $_POST['status'];
-	
+	  $notes1 = $_POST['notes'];
+	  
 	  $timingss = $hour.':'.$mintues.' '.$time;
 
 		 if(isset($_POST['saturday'])){ 
@@ -126,7 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $query .= "`to`='" . $to . "', ";
   $query .= "timings ='" . $timingss  . "', ";
   $query .= "`status` ='" . $statusw . "', ";
-  $query .= "`saturday` ='" . $saturday . "' ";
+  $query .= "`saturday` ='" . $saturday . "', ";
+  $query .= "`notes` ='" . $notes1 . "' ";
   $query .= "WHERE id='" .$id . "' ";
   $query .= "LIMIT 1";
 
@@ -261,6 +265,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 									<?php } ?>
 							</select>
 						</td>
+					</tr>
+					<tr>
+						<td><label class="form-label" for="notes">Any Special Notes</label></td>
+							
+						<td><input style="width:200px;height:40px;" type="text" name="notes" value="<?php echo $routes['notes']; ?> "></td>
+					
 					</tr>
 					<tr>
 						<td><label class="form-label" for="saturday"></label></td>

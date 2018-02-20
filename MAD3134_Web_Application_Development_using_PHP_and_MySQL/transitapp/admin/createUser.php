@@ -3,20 +3,10 @@
 
 	print_r($_POST);
 
-	  $from = $_POST['from'];
-	  $to = $_POST['to'];
-	  $hour = $_POST['hour'];
-	  $mintues = $_POST['mintues'];
-	  $time = $_POST['time'];
-	  $status = $_POST['status'];
-	  $timings = $hour.':'.$mintues.' '.$time;
-	  $notes = $_POST['notes'];
+	  $username = $_POST['username'];
+	  $password = $_POST['password'];
+	  $role = $_POST['role'];
 	
-	  if(isset($_POST['saturday'])){ 
-		$saturday = 1;
-	  }else{
-		  $saturday = 0;
-		}
 		
 	  $dbhost = "localhost";
 	  $dbuser = "root";
@@ -30,22 +20,18 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		exit();
 	  }
-	  $sql =  "INSERT INTO routes";
-	  $sql .= " (`from`, `to`, `timings`,`status`,saturday,`notes`)";
+	  $sql =  "INSERT INTO login";
+	  $sql .= " (`username`, `password`, `role_id`)";
 	  $sql .= " VALUES (";
-	  $sql .=  $from . ",";
-	  $sql .=  $to . ",";
-	  $sql .= "'" . $timings . "',";
-	  $sql .=  $status . ",";
-	  $sql .=  $saturday . ",";
-	  $sql .=  "'" . $notes  . "'";
+	  $sql .= "'" . $username . "',";
+	  $sql .= "'" . $password . "',";
+	  $sql .=  $role ;
 	  $sql .=")";
 
 	  $result = mysqli_query($connection, $sql);
 
 	  if ($result == TRUE) {
 		$new_id = mysqli_insert_id($connection);
-		//header("Location: " . "show.php?id=".$new_id);
 		 header("Location: " . "index.php");
 	  
 		exit();
@@ -53,6 +39,8 @@
 	  else {
 		echo "INSERT failed. <br/>";
 		echo "SQL command: " . $sql;
+
+
 		echo mysqli_error($connection);
 		mysqli_close($connection);
 
@@ -62,7 +50,7 @@
 	  mysqli_free_result($results);
 
 	} else {
-		header("Location: " . "addNewRoutes.php");
+		header("Location: " . "index.php");
 		exit();
 	}
 ?>

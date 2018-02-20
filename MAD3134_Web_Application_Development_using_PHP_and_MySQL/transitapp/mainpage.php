@@ -1,7 +1,7 @@
 <?php
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		
+		session_start();
 		//print_r($_POST);
 		
 		$username = $_POST['username'];
@@ -11,6 +11,8 @@
 		$dbUser = 'root';
 		$dbPass = '';
 		$dbName = 'transit';
+		
+	   $_SESSION["username"] = $username;
 		
 		$connection = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 		

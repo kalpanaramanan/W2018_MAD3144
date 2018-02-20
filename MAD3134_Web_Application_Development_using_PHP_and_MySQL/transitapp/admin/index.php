@@ -44,7 +44,7 @@
         exit();
       }
 
-      $query = "SELECT r.id as id,fl.name as pickup,tl.name as dropup, r.timings as timings,s.name as status,r.saturday as saturday
+      $query = "SELECT r.id as id,fl.name as pickup,tl.name as dropup, r.timings as timings,s.name as status,r.saturday as saturday,r.notes as notes
 				FROM `routes` as r
 				INNER JOIN city as fl on fl.id = r.from
 				INNER JOIN city as tl on tl.id = r.to
@@ -58,6 +58,7 @@
         exit();
       }
     ?>
+<?php session_start(); //echo $_SESSION["username"]; ?>
 
 <?php include 'header.php'; ?>
 
@@ -67,6 +68,8 @@
 
          <a href="addNewRoutes.php" class="btn"> Add New Route </a>
 		 <a href="sendSMS.php" class="btn"> Send SMS </a>
+		  <a href="userControl.php" class="btn">User Control</a>
+		  <a href="../showall.php" class="btn">JSON FILE CREATION</a>
 		 <a href="../index.php" class="btn" style="float:right;"> Logout </a>
 
           <table class="table">
@@ -76,39 +79,44 @@
               <th>Drop Up</th>
               <th>Timings</th>
 			  <th>Status</th>
-              <th>Action</th>
-              
+			  <th>Notes</th>  
+              <th>Action</th>		        
             </tr>
-
             <?php while ($routes = mysqli_fetch_assoc($results)) { ?>
 				<?php  if( $routes['saturday'] == TRUE) { ?>
-					  <tr style="background-color:yellow;">
-						<td><?php echo $routes['id']; ?></td>
+					  <tr>
+						<!-- <td><?php echo $routes['id']; ?></td> -->
+						<td><b>*</b></td>
 						<td><?php echo $routes['pickup']; ?></td>
 						<td><?php echo $routes['dropup']; ?></td>
 						<td><?php echo $routes['timings']; ?></td>
 						<td><?php echo $routes['status']; ?></td>
+						<td><?php echo $routes['notes']; ?></td>
 						<td><a class="btn btn-primary" href="<?php echo 'show.php?id=' . $routes['id']; ?>">View</a> 
-						<a  class="btn btn-primary"  href="<?php echo 'edit.php?id=' . $routes['id'].'&pickup='. $routes['pickup'].'&dropup='. $routes['dropup'].'&timings='. $routes['timings'].'&status='. $routes['status']; ?>">Edit</a> 
+						<a  class="btn btn-primary"  href="<?php echo 'edit.php?id=' . $routes['id'].'&pickup='. $routes['pickup'].'&dropup='. $routes['dropup'].'&timings='. $routes['timings'].'&status='. $routes['status'].'&notes='. $routes['notes']; ?>">Edit</a> 
 						<a class="btn btn-primary"  href="<?php echo 'delete.php?id='. $routes["id"]; ?>">Delete</a></td>
 					  </tr>
 				  <?php } else { ?>
-						<tr>
-						<td><?php echo $routes['id']; ?></td>
+						 <tr style="background-color:yellow;"> 
+						<td><b>*</b></td>
+						<!-- <td><?php echo $routes['id']; ?></td>-->
 						<td><?php echo $routes['pickup']; ?></td>
 						<td><?php echo $routes['dropup']; ?></td>
 						<td><?php echo $routes['timings']; ?></td>
 						<td><?php echo $routes['status']; ?></td>
+						<td><?php echo $routes['notes']; ?></td>
 						<td><a class="btn btn-primary" href="<?php echo 'show.php?id=' . $routes['id']; ?>">View</a> 
-						<a  class="btn btn-primary"  href="<?php echo 'edit.php?id=' . $routes['id'].'&pickup='. $routes['pickup'].'&dropup='. $routes['dropup'].'&timings='. $routes['timings'].'&status='. $routes['status']; ?>">Edit</a> 
+						<a  class="btn btn-primary"  href="<?php echo 'edit.php?id=' . $routes['id'].'&pickup='. $routes['pickup'].'&dropup='. $routes['dropup'].'&timings='. $routes['timings'].'&status='. $routes['status'].'&notes='. $routes['notes']; ?>">Edit</a> 
 						<a class="btn btn-primary"  href="<?php echo 'delete.php?id='. $routes["id"]; ?>">Delete</a></td>
 					  </tr>
 				  <?php } ?>
             <?php } ?>
           </table>
+		   <label class="form-label" style="margin-left:10px;font-size:20px;font-weight:bold;color:red;"> *Highligthed in yellow are not available on Saturdays.</label> <br>
+		   <label class="form-label" style="font-size:15px;float:right;color:black;">Updated as on 1st Feburary,2018.</label>
         </div> <!--// col-12 -->
       </div> <!-- // column -->
-	  <label class="form-label" style="font-size:20px;float:right;font-weight:bold;color:red;"> *** Highligthed Routes indicates transit available on Saturday as well</label>
+	 
     </div> <!--// container -->
     <?php
       // clean up and close database

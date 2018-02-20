@@ -123,10 +123,14 @@
 						</td>
 					</tr>
 					<tr>
-						<td><label class="form-label" for="saturday"></label></td>
-						
+						<td><label class="form-label" for="notes">Any Special Notes</label></td>
+						<td><input style="width:200px;height:40px;" type="text" name="notes"></td>
+					</tr>
+					<tr>
+						<td><label class="form-label" for="saturday"></label></td>					
 						<td><input type="checkbox" name="saturday" value="1"><span style="font-weight:bold;">*</span> Saturday Available</td>
 					</tr>
+					
 				</table>  
               <input type="submit" class="btn btn-primary" value="Add New Route" />
          
