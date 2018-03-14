@@ -72,6 +72,7 @@ class ViewController: UITableViewController {
         
         //put some text in each row
         cell.textLabel?.text = movies[indexPath.row].name;
+        cell.detailTextLabel?.text = String(movies[indexPath.row].seen);
         return cell;
     }
     
@@ -79,6 +80,14 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("Index ", indexPath.row," Value ", movies[indexPath.row]);
+        let m = movies[indexPath.row];
+        if(m.seen == true){
+            m.seen = false;
+        }else{
+            m.seen = true;
+        }
+        self.saveData();
+        tableView.reloadData();
     }
     
     //Delete an item in a tableView
